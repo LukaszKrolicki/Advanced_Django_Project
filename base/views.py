@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Room
 from django.http import HttpResponse
 
+
 def home(request):
     rooms = Room.objects.all()
     context= {'rooms': rooms}
