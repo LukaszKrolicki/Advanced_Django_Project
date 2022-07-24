@@ -1,13 +1,16 @@
 {% extends 'main.html' %}
 
-{%block content %}
+{% block content %}
 
 <h1>Home Template</h1>
 
 <div>
+
+    <h5><a href="{% url 'create_room' %}">Create2 room</a></h5>
     <div>
         {% for room in rooms %}
             <div>
+                <a href="{% url 'update_room' room.id %}">EDIT</a>
                 <span>@{{room.host.username}}</span>
                 <h5>{{room.id}} -- <a href="{% url 'room' room.id %}">{{room.name}}</a></h5>
                 <small>{{room.topic.name}}</small>
