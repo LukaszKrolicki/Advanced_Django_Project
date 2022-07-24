@@ -1,18 +1,19 @@
 from django.shortcuts import render, redirect
-from .models import Room
+from .models import Room, Topic
 from .forms import  RoomForm
 from django.http import HttpResponse
 
 
 def home(request):
     rooms = Room.objects.all()
-    context= {'rooms': rooms}
+    topics=Topic.objects.all()
+    context= {'rooms': rooms, 'topics':topics}
     return render(request, 'base/home.html', context)
 
 
 def room(request ,pk):
     room = Room.objects.get(id=pk)
-    context = {'room':room}
+    context = {'room':room, }
     return render(request, 'base/room.html', context)
 
 
