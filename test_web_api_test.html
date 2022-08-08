@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Cool rooms</h1>
+<div id="rooms_Container"></div>
+</body>
+
+<script>
+    let getRooms = async () => {
+    let response = await fetch('http://127.0.0.1:8000/api/rooms/')
+    let rooms= await response.json()
+    console.log('rooms:', rooms)
+    }
+
+    getRooms()
+</script>
+</html>
